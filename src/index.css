@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 210 20% 98%;
+    --foreground: 220 30% 10%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 220 30% 10%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 30% 10%;
+
+    --primary: 152 58% 32%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 210 20% 96%;
+    --secondary-foreground: 220 30% 10%;
+
+    --muted: 210 15% 93%;
+    --muted-foreground: 215 14% 45%;
+
+    --accent: 152 58% 32%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 214 20% 88%;
+    --input: 214 20% 88%;
+    --ring: 152 58% 32%;
+
+    --radius: 0.75rem;
+
+    /* Status colors */
+    --status-online: 142 71% 45%;
+    --status-offline: 0 72% 51%;
+    --status-pending: 38 92% 50%;
+
+    /* Rating scale */
+    --rating-neutral: 218 11% 65%;
+    --rating-low: 0 84% 60%;
+    --rating-mid: 38 92% 50%;
+    --rating-high: 142 69% 58%;
+    --rating-excellent: 152 58% 32%;
+
+    /* Extended palette */
+    --primary-light: 152 45% 94%;
+    --success: 152 58% 32%;
+    --warning: 38 92% 50%;
+    --info: 210 92% 55%;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+  }
+}
+
+@layer utilities {
+  .slide-enter-right {
+    animation: slideInRight 200ms cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .slide-enter-left {
+    animation: slideInLeft 200ms cubic-bezier(0.16, 1, 0.3, 1);
+  }
+}
+
+@keyframes slideInRight {
+  from { transform: translateX(40px); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes slideInLeft {
+  from { transform: translateX(-40px); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
